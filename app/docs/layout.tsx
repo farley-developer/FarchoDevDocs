@@ -5,7 +5,20 @@ import { source } from '@/lib/source';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <DocsLayout tree={source.pageTree} {...baseOptions}>
+    <DocsLayout tree={source.pageTree} {...baseOptions} sidebar={{
+      tabs: [
+        {
+          title: 'Formación Complementaria',
+          description: 'Test Tab',
+          url: '/docs/sena/fc_docs',
+        },
+        {
+          title: 'Análisis y Desarrollo de Software',
+          description: 'Test Tab',
+          url: '/docs/sena/ads_docs',
+        }
+      ],
+    }}>
       {children}
     </DocsLayout>
   );
