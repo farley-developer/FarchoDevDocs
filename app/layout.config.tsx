@@ -30,9 +30,22 @@ export const baseOptions: BaseLayoutProps = {
       ],
     },
     {
+      type: 'menu',
       text: 'Cursos',
-      url: '/docs/cursos',
-      active: 'nested-url',
+      items: [
+        {
+          text: 'Git',
+          url: '/docs/cursos/git_curso',          
+        },
+        {
+          text: 'GitHub',
+          url: '/docs/cursos/github_curso',          
+        },
+        {
+          text: 'Conventional Commits',
+          url: '/docs/cursos/cc_curso',          
+        },
+      ],
     },
     {
       text: 'Contacto',
