@@ -5,12 +5,14 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useState, useEffect, useMemo, memo } from "react";
 import { motion } from "framer-motion";
+import { domAnimation, LazyMotion } from "framer-motion";
+
 
 // Definición de cursos y documentación
 const courses = [
   {
     title: "Curso Git",
-    link: "./docs/cursos/curso-git/content",
+    link: "./docs/cursos/git_curso",
     images: {
       light: "/images/index-images/cursos/git-logo.svg",
       dark: "/images/index-images/cursos/git-logo-dark.svg",
@@ -18,7 +20,7 @@ const courses = [
   },
   {
     title: "Curso Github",
-    link: "./docs/cursos/curso-github/content",
+    link: "./docs/cursos/github_curso",
     images: {
       light: "/images/index-images/cursos/github-logo.svg",
       dark: "/images/index-images/cursos/github-logo-dark.svg",
@@ -26,7 +28,7 @@ const courses = [
   },
   {
     title: "Curso Conventional Commits",
-    link: "./docs/cursos/curso-conventional-commits/content",
+    link: "./docs/cursos/cc_curso",
     images: {
       light: "/images/index-images/cursos/conventional-commits-logo.svg",
       dark: "/images/index-images/cursos/conventional-commits-logo-dark.svg",
@@ -126,9 +128,6 @@ const GridItem = memo(({ title, link, images }) => {
   return (
     <motion.div
       className="text-center p-4 border rounded-lg shadow-md bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700"
-      variants={fadeInUp}
-      initial="hidden"
-      animate="visible"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
     >
@@ -150,6 +149,7 @@ const GridItem = memo(({ title, link, images }) => {
   );
 });
 
+
 // Componente contenedor de cuadrícula
 function GridContainer({ items }) {
   return (
@@ -159,7 +159,7 @@ function GridContainer({ items }) {
       animate="visible"
       variants={{
         hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+        visible: { opacity: 1, transition: { duration: 0.3 } }, // Eliminado staggerChildren
       }}
     >
       {items.map((item, index) => (
@@ -168,6 +168,7 @@ function GridContainer({ items }) {
     </motion.div>
   );
 }
+
 
 // Componente de la cuadrícula de cursos
 export function CourseGrid() {
