@@ -33,6 +33,16 @@ export const baseOptions: BaseLayoutProps = {
       text: 'Cursos',
       url: '/docs/sena/cursos',
       active: 'nested-url',
-    }
+    },
+    {
+      text: 'Contacto',
+      url: '/contact',
+      active: 'nested-url',
+    },
+    {
+      text: 'Acerca de',
+      url: '/about',
+      active: 'nested-url',
+    },
   ],
 };
