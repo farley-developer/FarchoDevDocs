@@ -39,7 +39,7 @@ const courses = [
 const documents = [
   {
     title: "Sistemas operativos de red",
-    link: "./docs/sena/sistemas-operativos-de-red/1-introduccion",
+    link: "./docs/sena/ads_docs/sistemas-operativos-de-red",
     images: {
       light: "/images/index-images/documentacion/001.svg",
       dark: "/images/index-images/documentacion/001.svg",
@@ -47,7 +47,7 @@ const documents = [
   },
   {
     title: "Redes y networking",
-    link: "./docs/sena/conceptos-basicos-de-redes-y-networking/1-introduccion",
+    link: "./docs/sena/ads_docs/redes-y-networking",
     images: {
       light: "/images/index-images/documentacion/002.svg",
       dark: "/images/index-images/documentacion/002.svg",
@@ -55,7 +55,7 @@ const documents = [
   },
   {
     title: "Paradigma orientado a objetos",
-    link: "./docs/sena/aplicacion-del-paradigma-orientado-a-objetos/1-introduccion",
+    link: "./docs/sena/ads_docs/paradigma-orientado-a-objetos",
     images: {
       light: "/images/index-images/documentacion/006.svg",
       dark: "/images/index-images/documentacion/006.svg",
@@ -63,7 +63,7 @@ const documents = [
   },
   {
     title: "Contenedores",
-    link: "./docs/sena/contenedores/1-introduccion",
+    link: "./docs/sena/ads_docs/contenedores-documentos",
     images: {
       light: "/images/index-images/documentacion/004.svg",
       dark: "/images/index-images/documentacion/004.svg",
@@ -71,7 +71,7 @@ const documents = [
   },
   {
     title: "Virtualización",
-    link: "./docs/sena/virtualizacion/1-introduccion",
+    link: "./docs/sena/ads_docs/virtualizacion",
     images: {
       light: "/images/index-images/documentacion/003.svg",
       dark: "/images/index-images/documentacion/003.svg",
@@ -87,7 +87,7 @@ const documents = [
   },
   {
     title: "Fundamentos de calidad del software",
-    link: "/docs/sena/fundamentos-de-la-calidad-del-software/1-introduccion",
+    link: "/docs/sena/ads_docs/fundamentos-de-la-calidad-del-software",
     images: {
       light: "/images/index-images/documentacion/007.svg",
       dark: "/images/index-images/documentacion/007.svg",
@@ -105,7 +105,7 @@ const documents = [
 
 const complementary = [
   {
-    title: "Aplicación de pruebas de software",
+    title: "Automatización de procesos para la eficiencia organizacional",
     link: "/docs/sena/actividades-de-documentacion-y-entrega-de-software-en-procesos-de-implantacion/1-introduccion",
     images: {
       light: "/images/index-images/documentacion/008.svg",
@@ -127,25 +127,32 @@ const GridItem = memo(({ title, link, images }) => {
 
   return (
     <motion.div
-      className="text-center p-4 border rounded-lg shadow-md bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700"
-      whileHover={{ scale: 1.05 }}
-      transition={{ duration: 0.3 }}
+    className="text-center p-4 border rounded-lg shadow-md bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 flex flex-col justify-between h-full"
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.3 }}
+  >
+    <div className="w-40 h-40 mx-auto flex items-center justify-center">
+      <Image src={imageSrc} alt={title} width={160} height={160} className="rounded-lg" priority={false} />
+    </div>
+    <p
+      className="text-lg font-semibold mt-2 text-gray-800 dark:text-gray-200 line-clamp-2 overflow-hidden cursor-pointer"
+      title={title} // Tooltip nativo
     >
-      <div className="w-40 h-40 mx-auto flex items-center justify-center">
-        <Image src={imageSrc} alt={title} width={160} height={160} className="rounded-lg" priority={false} />
-      </div>
-      <p className="text-lg font-semibold mt-2 text-gray-800 dark:text-gray-200">{title}</p>
-      <Link href={link} passHref>
-        <motion.button
-          className="mt-3 px-4 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700 transition"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ duration: 0.2 }}
-        >
-          Ver más
-        </motion.button>
-      </Link>
-    </motion.div>
+    {title}
+    </p>
+
+    <Link href={link} passHref>
+      <motion.button
+        className="mt-auto px-4 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700 transition"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+      >
+        Ver más
+      </motion.button>
+    </Link>
+  </motion.div>
+  
   );
 });
 

@@ -15,17 +15,49 @@ export const baseOptions: BaseLayoutProps = {
   links: [
     {
       type: 'menu',
-      text: 'Sena',
+      text: 'Análisis y Desarrollo de Software',
       items: [
         {
-          text: 'Análisis y desarrollo de software',
-          description: 'Un recurso para los aprendices de la tecnología en Análisis y Desarrollo de Software',
-          url: '/docs/sena/ads_docs',          
+          text: 'Sistemas operativos de red',
+          url: '/docs/sena/ads_docs/sistemas-operativos-de-red',          
         },
         {
-          text: 'Formación complementaria',
-          description: 'Programas cortos para actualizar o complementar conocimientos en áreas específicas.',
+          text: 'Redes y networking',
+          url: '/docs/sena/ads_docs/redes-y-networking',          
+        },
+        {
+          text: 'Paradigma orientado a objetos',
+          url: '/docs/sena/ads_docs/paradigma-orientado-a-objetos',          
+        },
+        {
+          text: 'Contenedores',
+          url: '/docs/sena/ads_docs/contenedores-documentos',          
+        },
+        {
+          text: 'Virtualización',
+          url: '/docs/sena/ads_docs/virtualizacion',          
+        },
+        {
+          text: 'Documentación y entrega',
           url: '/docs/sena/fc_docs',          
+        },
+        {
+          text: 'Fundamentos de calidad del software',
+          url: '/docs/sena/ads_docs/fundamentos-de-la-calidad-del-software',          
+        },
+        {
+          text: 'Aplicación de pruebas de software',
+          url: '/docs/sena/fc_docs',          
+        },
+      ],
+    },
+    {
+      type: 'menu',
+      text: 'Formación complementaria',
+      items: [
+        {
+          text: 'Automatización de procesos para la eficiencia organizacional',
+          url: '/docs/sena/ads_docs',          
         },
       ],
     },
