@@ -1,5 +1,11 @@
 {
-    "title": "Automatización de procesos para la eficiencia organizacional",
-    "description": "The description of root folder (optional)",
-    "root": true
-  }
+  "title": "Automatización de Procesos para la Eficiencia Organizacional",
+  "root": true,
+  "pages": [
+    "index",
+    "---Requerimientos del proceso de automatización---",
+    "1-requerimientos-del-proceso-de-automatizacion",
+    "---Creación de la automatización---"
+
+  ]
+}
