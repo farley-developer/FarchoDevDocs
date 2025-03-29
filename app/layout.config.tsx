@@ -14,6 +14,10 @@ export const baseOptions: BaseLayoutProps = {
   },
   links: [
     {
+      text: 'Inicio',
+      url: '/',
+      active: 'nested-url',},
+    {
       type: 'menu',
       text: 'Análisis y Desarrollo de Software',
       items: [

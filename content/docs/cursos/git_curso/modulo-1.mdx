@@ -1,0 +1,159 @@
+---
+title: Módulo 1. Introducción a Git
+---
+
+## 1.1. ¿Qué es Git?
+
+Git es un sistema de control de versiones distribuido, diseñado para gestionar proyectos de software de manera eficiente y colaborativa. Permite rastrear los cambios en el código fuente a lo largo del tiempo, facilitando el trabajo en equipo, la gestión de ramas, la integración de cambios y la reversión a versiones anteriores cuando sea necesario.
+
+### Definición y propósito
+
+Git desempeña un papel fundamental en el desarrollo de software moderno, permite a los desarrolladores rastrear, gestionar y colaborar en los cambios realizados en el código fuente de un proyecto de software. La esencia de Git radica en su capacidad para registrar minuciosamente cada modificación efectuada en los archivos del proyecto, lo que resulta invaluable para equipos de desarrollo de cualquier tamaño.
+
+El propósito central de Git es proporcionar una plataforma robusta y escalable para la colaboración eficiente en el desarrollo de software. Al ofrecer un mecanismo para rastrear y gestionar cambios, Git facilita la colaboración entre múltiples desarrolladores que trabajan en el mismo proyecto. Esto se logra mediante la implementación de un modelo de ramificación (branching) y fusión (merging) que permite a los desarrolladores trabajar en paralelo en diferentes características o correcciones de errores sin interferir con el trabajo de los demás.
+
+Por ejemplo, considera un equipo de desarrolladores que están trabajando en una aplicación web. Uno de los desarrolladores está encargado de implementar una nueva función de autenticación de usuarios, mientras que otro desarrollador está resolviendo un problema de rendimiento en el backend. Utilizando Git, ambos pueden crear ramas separadas en el repositorio del proyecto para trabajar en sus tareas respectivas. Después de completar sus cambios y probarlos de manera exhaustiva, pueden fusionar sus ramas de vuelta a la rama principal (también conocida como "master" o "main") de manera segura y sin conflictos.
+
+Además de facilitar la colaboración, Git también desempeña un papel crucial en la gestión de versiones del software. Cada confirmación (commit) en Git representa un punto en el tiempo en el que se registran los cambios realizados en los archivos del proyecto. Esto significa que Git mantiene un historial completo de todos los cambios realizados a lo largo del tiempo, lo que permite a los desarrolladores retroceder a versiones anteriores del código si es necesario. Esta capacidad de "viajar en el tiempo" resulta invaluable para solucionar problemas, revertir cambios no deseados o realizar auditorías de código.
+
+Continuando con el ejemplo anterior, supongamos que después de fusionar sus cambios en la rama principal, el equipo descubre un error crítico en la nueva función de autenticación de usuarios. Gracias a Git, pueden retroceder fácilmente a una versión anterior del código antes de que se introdujera el error, corregirlo y luego volver a aplicar los cambios necesarios. Esto minimiza el tiempo de inactividad y reduce el impacto en el desarrollo del proyecto.
+
+En resumen, Git no solo es una herramienta indispensable para la colaboración eficiente en el desarrollo de software, sino que también proporciona una sólida infraestructura para la gestión de versiones. Su capacidad para rastrear cambios, facilitar la colaboración y mantener un historial completo de versiones lo convierte en una herramienta esencial para cualquier equipo de desarrollo serio.
+
+### Breve historia y evolución
+
+Git, fue concebido por Linus Torvalds en 2005, surge como una solución innovadora ante las limitaciones percibidas en los sistemas de control de versiones existentes en ese momento. La necesidad de un sistema más ágil y eficiente para gestionar el código fuente del kernel de Linux llevó a Torvalds a desarrollar Git. Inspirado en las experiencias previas con otros sistemas de control de versiones, como BitKeeper, Git se diseñó con un enfoque distribuido y descentralizado, lo que lo diferenciaba significativamente de sus predecesores.
+
+Con el tiempo, Git ha experimentado una expansión exponencial en su adopción y uso en la industria del desarrollo de software. Su capacidad para gestionar proyectos de cualquier tamaño, desde pequeños proyectos de código abierto hasta enormes repositorios corporativos, ha contribuido a su crecimiento continuo. Además, su arquitectura distribuida lo hace ideal para equipos de desarrollo distribuidos geográficamente, permitiendo una colaboración fluida sin depender de una conexión de red constante con un repositorio centralizado.
+
+La popularidad de Git se ha visto impulsada por su robustez, velocidad y flexibilidad. A lo largo de los años, ha sido ampliamente adoptado por una variedad de comunidades de desarrollo, incluidas empresas, organizaciones sin fines de lucro y proyectos de código abierto. La comunidad de desarrolladores de Git ha contribuido activamente a su evolución, mediante la introducción de nuevas características, mejoras de rendimiento y correcciones de errores.
+
+Por ejemplo, la introducción de características como ramificaciones locales, fusiones automáticas y herramientas de colaboración en línea, como GitHub y GitLab, ha mejorado significativamente la experiencia de desarrollo con Git. Estas plataformas no solo proporcionan una interfaz visual para interactuar con repositorios Git, sino que también ofrecen funcionalidades adicionales, como seguimiento de problemas, solicitudes de extracción y revisión de código, que complementan perfectamente el flujo de trabajo de desarrollo de software.
+
+Con lo anterior, podemos dar por entendido que, Git ha evolucionado desde su concepción como una herramienta interna para el desarrollo del kernel de Linux hasta convertirse en el estándar de facto en el desarrollo de software en todo el mundo. Su historia de innovación continua y su amplia adopción demuestran su importancia como una herramienta fundamental para la colaboración y gestión de versiones en el desarrollo de software moderno.
+
+![**Linus Torvalds creador de Git**](/images/git_curso/modulo-1/linus-torvalds.jpg)
+
+**Linus Torvalds creador de Git**
+
+## **1.2. Ventajas de usar Git**
+
+Git ofrece numerosas ventajas en comparación con otros sistemas de control de versiones. Algunas de las principales ventajas incluyen:
+
+### Distribuido
+
+Una de las características más destacadas de Git es su enfoque distribuido en la gestión del código fuente. Esto significa que cada desarrollador que contribuye al proyecto tiene una réplica completa del repositorio en su propio sistema local. Esta arquitectura descentralizada permite una serie de beneficios significativos que no están presentes en los sistemas de control de versiones centralizados.
+
+La distribución del repositorio ofrece una mayor autonomía a cada desarrollador. Por ejemplo, si un miembro del equipo necesita realizar cambios en el código mientras está desconectado de la red, aún puede trabajar en su copia local del repositorio de Git. Una vez que se vuelva a conectar, puede sincronizar sus cambios con el repositorio remoto, fusionando cualquier modificación realizada por otros miembros del equipo. Este flujo de trabajo descentralizado elimina la dependencia de una conexión constante a Internet, lo que resulta especialmente útil en entornos donde la conectividad puede ser intermitente o limitada.
+
+Otro beneficio clave de la naturaleza distribuida de Git es su capacidad para fomentar la colaboración flexible y sin fricciones entre los miembros del equipo. Cada desarrollador puede trabajar en su propia copia del repositorio sin interferir con el trabajo de los demás. Por ejemplo, supongamos que un equipo de desarrolladores está trabajando en una nueva funcionalidad para una aplicación. Cada miembro del equipo puede crear su propia rama (branch) en el repositorio para implementar sus cambios sin afectar el código principal. Posteriormente, pueden fusionar sus ramas de manera transparente, combinando los cambios de manera ordenada y sin conflictos.
+
+Además, la distribución del repositorio mejora la redundancia y la seguridad de los datos. Como cada desarrollador tiene una copia completa del historial del proyecto en su sistema local, el riesgo de pérdida de datos debido a fallos en el servidor central se minimiza significativamente. Incluso en el caso improbable de que el servidor central falle, cada desarrollador conserva una copia completa y actualizada del repositorio, lo que facilita la recuperación sin pérdida de datos.
+
+### Velocidad
+
+Git se destaca por su excepcional velocidad en la gestión de cambios, creación de ramas y fusión de código. Esta rapidez es fundamental para mantener la eficiencia en los flujos de trabajo de desarrollo de software, ya que permite a los equipos mantener un ritmo ágil y productivo en el desarrollo de proyectos de cualquier escala.
+
+La velocidad de Git se evidencia en varios aspectos. Por ejemplo, al realizar operaciones como la confirmación de cambios (commit) o la consulta del historial del proyecto, Git responde de manera instantánea, lo que permite a los desarrolladores realizar seguimiento de los cambios en tiempo real sin experimentar demoras significativas.
+
+Además, la creación y gestión de ramas en Git se lleva a cabo de forma rápida y eficiente. Los desarrolladores pueden crear nuevas ramas para trabajar en características o correcciones de errores sin afectar el código principal del proyecto. Esta capacidad de ramificación rápida fomenta la experimentación y la iteración en el desarrollo de software, ya que los equipos pueden probar nuevas ideas sin comprometer la estabilidad del código base.
+
+La fusión de código en Git también se realiza de manera eficiente, lo que permite integrar cambios de diferentes ramas de manera fluida y sin conflictos. Git utiliza algoritmos inteligentes para identificar automáticamente las diferencias entre las ramas y fusionarlas de manera ordenada. Esto reduce significativamente el tiempo y el esfuerzo requeridos para combinar cambios, permitiendo a los equipos mantener un flujo de trabajo constante y ágil.
+
+📌 En conjunto, la velocidad de Git es un factor clave en la mejora de la productividad y la eficiencia en el desarrollo de software. Al proporcionar herramientas rápidas y eficientes para gestionar cambios, ramificar el código y fusionar contribuciones, Git permite a los equipos mantener un ritmo acelerado de desarrollo sin comprometer la calidad del software. Esta capacidad de respuesta y agilidad contribuye en gran medida al éxito de Git como una herramienta indispensable en el desarrollo de software moderno.
+
+### Gestión de ramas eficiente
+
+Git sobresale en la creación y administración ágil de ramas, lo que otorga a los equipos la capacidad de trabajar simultáneamente en diversas características o correcciones de errores de manera organizada y sin problemas.
+
+La eficiencia en la gestión de ramas de Git se traduce en una serie de ventajas palpables. Por ejemplo, los desarrolladores pueden crear nuevas ramas de forma instantánea para abordar tareas específicas sin interrumpir el flujo de trabajo principal del proyecto. Esta capacidad de ramificar el código de manera rápida y sencilla fomenta la experimentación y la iteración, ya que los equipos pueden explorar nuevas ideas sin temor a afectar la estabilidad del código base.
+
+Además, Git ofrece herramientas potentes para fusionar ramas de manera eficiente. Los algoritmos de fusión automáticos de Git identifican y resuelven conflictos de manera inteligente, lo que simplifica el proceso de integrar cambios de diferentes ramas. Esto permite a los equipos mantener un flujo de trabajo fluido y constante, incluso cuando múltiples desarrolladores trabajan en partes diferentes del proyecto de manera simultánea.
+
+La capacidad de Git para gestionar ramas de manera eficiente también facilita la colaboración entre los miembros del equipo. Por ejemplo, un desarrollador puede crear una rama para implementar una nueva característica, mientras que otro desarrollador trabaja en una corrección de errores en una rama separada. Una vez completadas, estas ramas pueden fusionarse de manera transparente, permitiendo que los cambios se integren sin problemas en el código principal del proyecto.
+
+Siendo de esta manera la gestión de ramas una herramienta eficiente de Git fundamental para promover la colaboración y la agilidad en el desarrollo de software. Al facilitar la creación y administración de ramas, Git permite a los equipos trabajar de manera más organizada y productiva, lo que contribuye a la entrega oportuna de proyectos de alta calidad. Esta capacidad de adaptación y flexibilidad hace de Git una herramienta invaluable para cualquier equipo de desarrollo.
+
+### Seguimiento preciso de cambios
+
+Git se distingue por su capacidad para registrar meticulosamente cada modificación efectuada en el código fuente, lo que proporciona un seguimiento detallado de quién realizó qué cambio y cuándo se llevó a cabo.
+
+Esta característica es fundamental para la transparencia y la trazabilidad en el desarrollo de software. Por ejemplo, cuando un desarrollador realiza una modificación en el código y realiza una confirmación (commit) en Git, se adjunta automáticamente información detallada, como el nombre del autor, la fecha y hora de la modificación, y un mensaje descriptivo que resume el cambio realizado. Esto permite a los miembros del equipo y los responsables del proyecto entender rápidamente qué cambios se han realizado y quién los realizó.
+
+Además, Git proporciona herramientas para explorar el historial de cambios de manera exhaustiva. Los desarrolladores pueden utilizar comandos como "git log" para ver una lista cronológica de todos los commits realizados en el repositorio, junto con detalles como el autor, la fecha y el mensaje de cada commit. Esto facilita la identificación de cuándo y por qué se introdujeron ciertos cambios en el código.
+
+El seguimiento preciso de cambios de Git también es invaluable para la resolución de problemas y la auditoría de código. Si surge un problema en el software, los desarrolladores pueden retroceder en el historial de cambios para identificar exactamente cuándo se introdujo el problema y quién lo modificó, lo que agiliza el proceso de depuración y resolución de problemas.
+
+En resumen, el seguimiento preciso de cambios de Git proporciona una visión detallada del historial de modificaciones en un proyecto de software, lo que facilita la colaboración, la resolución de problemas y la auditoría de código. Esta capacidad de rastreo meticuloso contribuye en gran medida a la transparencia y la confiabilidad en el desarrollo de software, convirtiendo a Git en una herramienta indispensable para equipos de desarrollo de cualquier tamaño.
+
+### Integración con otras herramientas
+
+Git se destaca por su capacidad para integrarse sin problemas con una amplia gama de herramientas de desarrollo, lo que amplía su funcionalidad y mejora la eficiencia del flujo de trabajo de desarrollo de software.
+
+Una de las integraciones más comunes de Git es con sistemas de seguimiento de problemas (issue tracking), como Jira, GitHub Issues o GitLab Issues. Estos sistemas permiten a los equipos registrar, gestionar y asignar tareas y problemas relacionados con el desarrollo de software. La integración con Git permite vincular automáticamente commits, ramas y solicitudes de extracción (pull requests) con los problemas correspondientes en el sistema de seguimiento de problemas. Esto facilita la trazabilidad entre los cambios en el código y los problemas que intentan resolver, lo que mejora la comunicación y la colaboración dentro del equipo.
+
+Otra integración clave es con sistemas de integración continua (CI, por sus siglas en inglés), como Jenkins, Travis CI o GitLab CI/CD. Estos sistemas automatizan el proceso de construcción, pruebas y despliegue de aplicaciones, lo que ayuda a detectar errores de manera temprana y garantizar la calidad del código. La integración con Git permite a los sistemas CI monitorear continuamente el repositorio de Git en busca de nuevos cambios y activar automáticamente los flujos de trabajo de construcción y prueba cuando se realizan cambios en el código. Esto agiliza el proceso de desarrollo al tiempo que garantiza que las nuevas contribuciones se prueben de manera exhaustiva antes de ser integradas en el proyecto.
+
+Además, Git se integra con una variedad de herramientas de revisión de código (code review), como Gerrit, Crucible o GitHub Pull Requests. Estas herramientas facilitan la revisión y discusión de cambios de código entre los miembros del equipo, lo que ayuda a mejorar la calidad del software y fomentar las mejores prácticas de desarrollo. La integración con Git permite a los equipos iniciar y gestionar solicitudes de extracción directamente desde el repositorio de Git, lo que simplifica el proceso de revisión y aprobación de cambios.
+
+📌 En conjunto, la integración de Git con otras herramientas de desarrollo amplía su funcionalidad y mejora la eficiencia del flujo de trabajo de desarrollo de software. Al permitir una comunicación y colaboración más fluidas entre los miembros del equipo y automatizar tareas repetitivas, estas integraciones ayudan a los equipos a desarrollar y entregar software de manera más rápida y eficiente.
+
+## 1.3. Conceptos básicos
+
+Para comprender Git, es importante familiarizarse con algunos conceptos fundamentales
+
+### Repositorio
+
+En Git, un repositorio es más que simplemente un directorio; es la base fundamental para gestionar el código fuente de un proyecto de software. Dentro de un repositorio Git, se almacenan todos los archivos y carpetas que componen el proyecto, junto con un registro detallado de cada modificación realizada en esos archivos a lo largo del tiempo.
+
+ La esencia del repositorio Git reside en su capacidad para registrar y mantener un historial completo de cambios. Cada vez que se realiza una modificación en un archivo dentro del repositorio, Git registra esa modificación como un "commit" o confirmación. Estos commits no solo contienen los cambios realizados en los archivos, sino también información relevante como el autor del cambio, la fecha y hora en que se realizó, y un mensaje descriptivo que resume los cambios efectuados.
+
+Los repositorios Git pueden ser locales o remotos. Los repositorios locales residen en la máquina de cada desarrollador y contienen una copia completa del historial de cambios del proyecto. Esto permite a los desarrolladores trabajar de manera independiente en sus propias copias del proyecto y realizar commits de forma local sin necesidad de estar conectados a Internet. Por otro lado, los repositorios remotos se encuentran alojados en un servidor en línea, como GitHub, GitLab o Bitbucket. Estos servidores actúan como puntos centrales de colaboración, donde los desarrolladores pueden compartir sus cambios, colaborar en el código y mantener una copia centralizada y respaldada del proyecto.
+
+### Commit
+
+En Git, un commit es una instantánea de un conjunto de cambios realizados en los archivos del repositorio en un momento específico. Cada commit representa una versión particular del código en el historial de cambios del proyecto. Estos commits no solo almacenan los cambios realizados en los archivos, sino también información contextual valiosa, como el autor del cambio, la fecha y hora en que se realizó, y un mensaje descriptivo que resume los cambios efectuados.
+
+Los commits son la unidad básica de trabajo en Git y juegan un papel fundamental en el seguimiento y gestión de cambios en un proyecto. Cada vez que un desarrollador realiza una modificación en los archivos del repositorio y está satisfecho con esos cambios, puede agruparlos en un commit. Este proceso de confirmación captura el estado actual de los archivos en el repositorio en un punto específico en el tiempo, lo que facilita la referencia y el seguimiento de los cambios realizados en el proyecto a lo largo del desarrollo.
+
+Los commits proporcionan varios beneficios clave en el flujo de trabajo de desarrollo de software. En primer lugar, permiten a los desarrolladores rastrear y revertir cambios en el código de manera eficiente. Si surge un problema o se necesita retroceder a una versión anterior del proyecto, los commits proporcionan un historial detallado que permite a los desarrolladores identificar exactamente qué cambios se realizaron y cuándo. Además, los commits facilitan la colaboración entre miembros del equipo, ya que cada commit incluye información sobre quién realizó el cambio y un mensaje que describe los cambios realizados, lo que ayuda a mantener un contexto claro y a comunicar la intención detrás de cada modificación.
+
+En resumen, los commits son una parte fundamental del flujo de trabajo de Git, ya que representan la forma en que se registran y gestionan los cambios en un repositorio. Proporcionan un historial detallado de los cambios realizados en el código a lo largo del tiempo, lo que facilita la colaboración, la resolución de problemas y la gestión efectiva de versiones en el desarrollo de software.
+
+### Branch
+
+En Git, una rama (branch) es una línea de desarrollo independiente que se deriva del historial principal del repositorio, comúnmente conocido como la rama principal (generalmente denominada "master" o "main"). Las ramas permiten a los desarrolladores trabajar en nuevas características o solucionar problemas de forma separada y sin interferir con el trabajo en otras áreas del proyecto.
+
+El concepto de ramificación es esencial en Git, ya que ofrece una manera flexible y segura de gestionar el desarrollo de software. Cuando un desarrollador crea una nueva rama en el repositorio, Git crea una copia virtual del estado actual del proyecto en ese momento. Desde este punto, el desarrollador puede realizar cambios en los archivos del proyecto de manera independiente, sin preocuparse por afectar el código en otras ramas o en la rama principal.
+
+Las ramas son particularmente útiles cuando se trabaja en nuevas características o experimentos, ya que permiten a los desarrolladores trabajar de forma aislada hasta que la funcionalidad esté completamente desarrollada y probada. Del mismo modo, las ramas se utilizan para abordar problemas o errores sin afectar el trabajo en curso en otras partes del proyecto.
+
+Una vez que se completa una nueva característica o se resuelve un problema en una rama, se puede fusionar de nuevo en la rama principal mediante un proceso conocido como merge. Durante el merge, Git combina los cambios realizados en la rama con los cambios en la rama principal, creando una única línea de desarrollo que incluye todas las modificaciones realizadas en ambas ramas.
+
+En resumen, las ramas en Git son una herramienta poderosa que permite a los desarrolladores trabajar de manera independiente en diferentes partes del proyecto. Facilitan el desarrollo paralelo, la experimentación y la resolución de problemas, al tiempo que garantizan la integridad del código en el repositorio principal. Las ramas son una característica fundamental de Git que contribuye a su popularidad y eficacia en el desarrollo de software.
+
+### Merge
+
+En Git, hacer un merge significa combinar los cambios de una rama en otra. Este proceso se utiliza para integrar el trabajo realizado en una rama (por ejemplo, una nueva característica o una corrección de errores) en la rama principal del repositorio. Git administra automáticamente los cambios durante el proceso de fusión y resuelve cualquier conflicto que pueda surgir si se han realizado cambios en las mismas líneas de código en ambas ramas.
+
+El merge es una operación fundamental en Git que permite mantener un historial de cambios coherente y actualizado en el proyecto. Cuando se completa el trabajo en una rama y se desea incorporar esos cambios en la rama principal (también conocida como "master" o "main"), se realiza un merge. Durante este proceso, Git analiza las diferencias entre las dos ramas y fusiona los cambios de la rama secundaria en la rama principal.
+
+Es importante destacar que Git gestiona automáticamente los cambios durante el merge y resuelve los conflictos que puedan surgir. Los conflictos ocurren cuando se realizan cambios en las mismas líneas de código en ambas ramas y Git no puede determinar automáticamente cómo combinar los cambios. En estos casos, Git pausa el proceso de merge y solicita al usuario que resuelva manualmente los conflictos antes de continuar con la fusión.
+
+Una vez completado el merge y resueltos los conflictos, los cambios de la rama secundaria se incorporan correctamente en la rama principal. Esto garantiza que el proyecto principal tenga acceso a las nuevas características o correcciones de errores desarrolladas en la rama secundaria, manteniendo la coherencia y la integridad del código en todo momento.
+
+En resumen, el merge en Git es una operación esencial que permite integrar el trabajo realizado en diferentes ramas en el repositorio principal. Facilita la colaboración entre los miembros del equipo y garantiza que los cambios se incorporen de manera efectiva y sin problemas en el proyecto principal. La capacidad de Git para gestionar el proceso de merge de forma automática y resolver conflictos de manera eficiente lo convierte en una herramienta invaluable en el desarrollo de software colaborativo.
+
+### Remote
+
+En Git, un remoto (remote) es una versión del repositorio que se encuentra en un servidor en línea, como GitHub, Bitbucket o GitLab. Los repositorios remotos son fundamentales para la colaboración en equipos de desarrollo, ya que permiten a los miembros del equipo trabajar en proyectos compartidos y mantener un historial centralizado de cambios.
+
+Los usuarios pueden clonar un repositorio remoto en sus máquinas locales para trabajar en él. Este proceso crea una copia local del repositorio remoto en la máquina del usuario, lo que le permite realizar modificaciones, crear nuevas ramas y realizar commits de manera independiente. Una vez que se han realizado los cambios locales, los usuarios pueden enviar esos cambios de vuelta al repositorio remoto utilizando comandos como `git push`.
+
+El comando `git push` se utiliza para enviar los commits realizados en la copia local del repositorio de vuelta al repositorio remoto. Esto actualiza el historial de cambios en el repositorio remoto con los cambios realizados localmente. Los usuarios pueden especificar la rama local que desean enviar al repositorio remoto, así como la rama remota a la que desean enviar los cambios.
+
+Del mismo modo, los usuarios pueden utilizar el comando `git pull` para recuperar los cambios realizados en el repositorio remoto y fusionarlos con la copia local del repositorio. Esto garantiza que la copia local del repositorio esté sincronizada con la versión más reciente del repositorio remoto.
+
+En resumen, los repositorios remotos en Git son esenciales para la colaboración en equipos de desarrollo, ya que proporcionan un medio centralizado para compartir y mantener un historial de cambios en proyectos compartidos. Los usuarios pueden clonar, enviar cambios y sincronizar repositorios remotos utilizando comandos simples de Git, lo que facilita la colaboración y el trabajo en equipo en proyectos de desarrollo de software.
+
+Estos conceptos básicos son fundamentales para comprender cómo funciona Git y cómo se utiliza en el desarrollo de software colaborativo.
