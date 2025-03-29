@@ -61,7 +61,7 @@ export const baseOptions: BaseLayoutProps = {
       items: [
         {
           text: 'Automatización de procesos para la eficiencia organizacional',
-          url: '/docs/sena/ads_docs',          
+          url: '/docs/sena/fc_docs/automatizacion-de-procesos-para-la-eficiencia-organizacional',          
         },
       ],
     },
