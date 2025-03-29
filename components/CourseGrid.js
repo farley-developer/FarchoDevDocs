@@ -106,7 +106,7 @@ const documents = [
 const complementary = [
   {
     title: "Automatización de procesos para la eficiencia organizacional",
-    link: "/docs/sena/actividades-de-documentacion-y-entrega-de-software-en-procesos-de-implantacion/1-introduccion",
+    link: "/docs/sena/fc_docs/automatizacion-de-procesos-para-la-eficiencia-organizacional",
     images: {
       light: "/images/index-images/documentacion/008.svg",
       dark: "/images/index-images/documentacion/008.svg",
