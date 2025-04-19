@@ -4,7 +4,7 @@ title: 2.2. Configuración inicial de Git
 
 Después de instalar Git, es importante configurarlo correctamente antes de comenzar a trabajar con repositorios.
 
-## Configurar el Nombre de Usuario y el Correo Electrónico
+## 2.2.1. Configurar el Nombre de Usuario y el Correo Electrónico
 
 Lo primero que debes hacer después de instalar Git es configurar tu nombre de usuario y correo electrónico. Estos datos se asociarán con los commits que realices.
 
@@ -34,7 +34,7 @@ git config --global --list
 
 Esto debería mostrar una lista con tu nombre y correo electrónico configurados, entre otras configuraciones globales.
 
-## Configuración del Editor de Texto
+## 2.2.2. Configuración del Editor de Texto
 
 Puedes configurar el editor de texto que deseas usar para escribir mensajes de commit. Por ejemplo, para usar Vim, puedes hacer:
 
@@ -44,7 +44,7 @@ git config --global core.editor "vim"
 
 Si prefieres otro editor, simplemente reemplaza "vim" con el comando adecuado para tu editor (por ejemplo, "nano", "code --wait" para Visual Studio Code, etc.).
 
-## Configuración del Alias de Git
+## 2.2.3. Configuración del Alias de Git
 
 Git permite crear alias para comandos frecuentes, facilitando y acelerando tu flujo de trabajo. Aquí tienes algunos ejemplos útiles:
 
@@ -57,7 +57,7 @@ git config --global alias.br branch
 
 Con estos alias, en lugar de escribir git status, solo necesitas escribir git st.
 
-## Configuración del Archivo .gitignore Global
+## 2.2.4. Configuración del Archivo .gitignore Global
 
 A veces, hay archivos que siempre quieres ignorar en todos tus repositorios (por ejemplo, archivos de sistema o archivos temporales). Puedes configurar un archivo .gitignore global:
 
@@ -78,7 +78,7 @@ Ejemplo de .gitignore_global:
 .tmp
 ```
 
-## Configuración de las Credenciales de Cache
+## 2.2.5. Configuración de las Credenciales de Cache
 
 Para evitar que Git te pida tus credenciales en cada operación de red (como git push o git pull), puedes habilitar la caché de credenciales:
 
@@ -94,7 +94,7 @@ git config --global credential.helper 'cache --timeout=3600'
 
 Esto almacenará tus credenciales en la caché durante una hora.
 
-## Configuración de las Ramas Predeterminadas
+## 2.2.6. Configuración de las Ramas Predeterminadas
 
 Si deseas cambiar el nombre de la rama predeterminada para nuevos repositorios (por ejemplo, cambiar master a main), puedes hacer:
 
@@ -102,7 +102,7 @@ Si deseas cambiar el nombre de la rama predeterminada para nuevos repositorios (
 git config --global init.defaultBranch main
 ```
 
-## Resumen de Comandos Utilizados
+## 2.2.7. Resumen de Comandos Utilizados
 
 ```bash
 git config --global user.name "Tu Nombre"
