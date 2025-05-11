@@ -81,6 +81,10 @@ export const baseOptions: BaseLayoutProps = {
           text: 'Conventional Commits',
           url: '/docs/cursos/cc_curso',          
         },
+        {
+          text: 'Shift Left Testing en Desarrollo Ágil',
+          url: '/docs/cursos/shift-left-testingen-desarrolloagil',          
+        },
       ],
     },
     {
