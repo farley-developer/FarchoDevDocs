@@ -34,6 +34,14 @@ const courses = [
       dark: "/images/index-images/cursos/conventional-commits-logo-dark.svg",
     },
   },
+  {
+    title: "Shift Left Testing en Desarrollo Ágil",
+    link: "./docs/cursos/shift-left-testingen-desarrolloagil",
+    images: {
+      light: "/images/index-images/cursos/ShiftLeftTesting.svg",
+      dark: "/images/index-images/cursos/ShiftLeftTesting.svg",
+    },
+  },
 ];
 
 const documents = [
